@@ -15,25 +15,6 @@ import 'ended/end2.dart';
 
 late Box<ToDo> textBox;
 
-void main() async {
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarColor: Colors.deepOrangeAccent,
-      systemNavigationBarColor: Colors.deepOrangeAccent,
-    ),
-  );
-  WidgetsFlutterBinding.ensureInitialized();
-  await Hive.initFlutter();
-  Hive.registerAdapter(ToDoAdapter());
-  textBox = await Hive.openBox("textBox");
-  runApp(
-    const MaterialApp(
-      home: MyApp(),
-      debugShowCheckedModeBanner: false,
-    ),
-  );
-}
-
 class MyApp extends StatefulWidget {
   final int? index;
 

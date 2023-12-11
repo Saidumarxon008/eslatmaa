@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_mashgulot/MyApp.dart';
+import 'package:flutter_mashgulot/adapter/todo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.deepOrangeAccent,
+      systemNavigationBarColor: Colors.deepOrangeAccent,
+    ),
+  );
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(ToDoAdapter());
+  textBox = await Hive.openBox("textBox");
   runApp(const HomePage());
 }
 

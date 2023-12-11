@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mashgulot/MyApp.dart';
 import 'package:flutter_mashgulot/adapter/todo.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 class Add extends StatefulWidget {
@@ -50,7 +51,7 @@ class _AddState extends State<Add> {
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: Container(
-                      height: 30,
+                      height: 30.h,
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(10),

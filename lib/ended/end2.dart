@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mashgulot/ended/end3.dart';
-import 'package:flutter_mashgulot/main.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import '../MyApp.dart';

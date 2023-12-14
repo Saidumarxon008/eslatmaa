@@ -48,12 +48,6 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
   List<ToDo> list = [];
 
   @override
-  void dispose() {
-    // _themeManager.removeListener(themeListener);
-    super.dispose();
-  }
-
-  @override
   void initState() {
     super.initState();
     _controller = AnimationController(
@@ -151,10 +145,6 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                 IconButton(
                     onPressed: () {
                       //showSearch
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => const HomePage()));
                     },
                     icon: const Icon(
                       Icons.search,
@@ -382,9 +372,10 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Contap(
-                                          index: index,
-                                        ))).then((value) {
+                                        builder: (context) =>
+                                            Contap(
+                                              index: index,
+                                            ))).then((value) {
                                   setState(() {});
                                 });
                               },
@@ -404,9 +395,10 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => Add(
-                                                index: index,
-                                              ))).then((value) {
+                                              builder: (context) =>
+                                                  Add(
+                                                    index: index,
+                                                  ))).then((value) {
                                         setState(() {});
                                       });
                                     }
@@ -414,8 +406,9 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                                 },
                                 backgroundBuilder:
                                     (context, direction, progress) {
-                                  if (direction == SwipeDirection.endToStart) {
-                                  } else if (direction ==
+                                  if (direction ==
+                                      SwipeDirection.endToStart) {} else
+                                  if (direction ==
                                       SwipeDirection.startToEnd) {
                                     return Container(
                                       height: 50,
@@ -449,14 +442,16 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                                               Navigator.push(
                                                   context,
                                                   MaterialPageRoute(
-                                                      builder: (context) => Add(
-                                                        index: index,
-                                                      ))).then((value) {
+                                                      builder: (context) =>
+                                                          Add(
+                                                            index: index,
+                                                          ))).then((value) {
                                                 setState(() {});
                                               });
                                             },
-                                            icon: const Icon(MaterialCommunityIcons
-                                                .checkbox_blank_circle_outline)),
+                                            icon: const Icon(
+                                                MaterialCommunityIcons
+                                                    .checkbox_blank_circle_outline)),
                                       ],
                                     ),
                                     MaterialButton(
@@ -474,7 +469,9 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                                             color: Colors.yellow),
                                         child: Expanded(
                                           child: Text(
-                                            textBox.getAt(index)?.content ??
+                                            textBox
+                                                .getAt(index)
+                                                ?.content ??
                                                 "null",
                                             textAlign: TextAlign.center,
                                             style:
@@ -582,7 +579,11 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                               ),
                             );
                             textEditingController.clear();
-                          }
+                            FocusManager.instance.primaryFocus?.unfocus();
+                          setState(() {
+                            conwidth = cw == 1 ? cw : cw;
+                            textfieldwith = textfieldwith == av ? av : av;
+                          });}
                         },
                         backgroundColor: Colors.black,
                         child: Icon(

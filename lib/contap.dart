@@ -30,8 +30,8 @@ class _ContapState extends State<Contap> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.yellow[700],
-        extendBody: true,
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
               child: ListView(
@@ -106,49 +106,63 @@ class _ContapState extends State<Contap> {
                 ],
               ),
             ),
-            Expanded(
-                child: Row(
-              children: [
-                MaterialButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => EndIkki(
-                                  index: widget.index,
-                                )));
-                  },
-                  child: const Column(
-                    children: [Icon(Icons.done_outline)],
+            SizedBox(
+              height: 50,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: MaterialButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => EndIkki(
+                                      index: widget.index,
+                                    )));
+                      },
+                      child: const Column(
+                        children: [
+                          Icon(Icons.done_outline),
+                        Text("Yakunlash")],
+                      ),
+                    ),
                   ),
-                ),
-                MaterialButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => Add(
-                                  index: widget.index,
-                                )));
-                  },
-                  child: const Column(
-                    children: [Icon(Icons.done_outline)],
+                  Expanded(
+                    child: MaterialButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => Add(
+                                      index: widget.index,
+                                    )));
+                      },
+                      child: const Column(
+                        children: [
+                          Icon(FontAwesome.pencil),
+                        Text("Tahrirlash")],
+                      ),
+                    ),
                   ),
-                ),
-                MaterialButton(
-                  onPressed: () {
-                    setState(() {
-                      textBox.deleteAt(widget.index!);
-                      textEditingController.clear();
-                      Navigator.pop(context);
-                    });
-                  },
-                  child: const Column(
-                    children: [Icon(Icons.done_outline)],
+                  Expanded(
+                    child: MaterialButton(
+                      onPressed: () {
+                        setState(() {
+                          textBox.deleteAt(widget.index!);
+                          textEditingController.clear();
+                          Navigator.pop(context);
+                        });
+                      },
+                      child: const Column(
+                        children: [
+                          Icon(AntDesign.delete),
+                        Text("O'chirish")],
+                      ),
+                    ),
                   ),
-                ),
-              ],
-            ))
+                ],
+              ),
+            )
           ],
         ));
   }

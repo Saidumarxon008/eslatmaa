@@ -203,6 +203,12 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                       MaterialCommunityIcons.format_list_checkbox,
                     ),
                   ),
+                   Visibility(
+                      child: ListTile(onTap: (){},
+                    title: const Text("Muhim"),
+                        titleAlignment: ListTileTitleAlignment.top,
+                    leading: const Icon(AntDesign.staro),
+                  )),
                   ListTile(
                     onTap: () {
                       Navigator.push(context,
@@ -371,8 +377,7 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            Contap(
+                                        builder: (context) => Contap(
                                               index: index,
                                             ))).then((value) {
                                   setState(() {});
@@ -394,8 +399,7 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) =>
-                                                  Add(
+                                              builder: (context) => Add(
                                                     index: index,
                                                   ))).then((value) {
                                         setState(() {});
@@ -405,9 +409,8 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                                 },
                                 backgroundBuilder:
                                     (context, direction, progress) {
-                                  if (direction ==
-                                      SwipeDirection.endToStart) {} else
-                                  if (direction ==
+                                  if (direction == SwipeDirection.endToStart) {
+                                  } else if (direction ==
                                       SwipeDirection.startToEnd) {
                                     return Container(
                                       height: 50,
@@ -441,16 +444,14 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                                               Navigator.push(
                                                   context,
                                                   MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          Add(
+                                                      builder: (context) => Add(
                                                             index: index,
                                                           ))).then((value) {
                                                 setState(() {});
                                               });
                                             },
-                                            icon: const Icon(
-                                                MaterialCommunityIcons
-                                                    .checkbox_blank_circle_outline)),
+                                            icon: const Icon(MaterialCommunityIcons
+                                                .checkbox_blank_circle_outline)),
                                       ],
                                     ),
                                     MaterialButton(
@@ -459,22 +460,20 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                const Contap()));
+                                                    const Contap()));
                                       },
                                       child: Container(
                                         decoration: BoxDecoration(
                                             borderRadius:
-                                            BorderRadius.circular(30),
+                                                BorderRadius.circular(30),
                                             color: Colors.yellow),
                                         child: Expanded(
                                           child: Text(
-                                            textBox
-                                                .getAt(index)
-                                                ?.content ??
+                                            textBox.getAt(index)?.content ??
                                                 "null",
                                             textAlign: TextAlign.center,
                                             style:
-                                            const TextStyle(fontSize: 20),
+                                                const TextStyle(fontSize: 20),
                                           ),
                                         ),
                                       ),
@@ -579,10 +578,11 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                             );
                             textEditingController.clear();
                             FocusManager.instance.primaryFocus?.unfocus();
-                          setState(() {
-                            conwidth = cw == 1 ? cw : cw;
-                            textfieldwith = textfieldwith == av ? av : av;
-                          });}
+                            setState(() {
+                              conwidth = cw == 1 ? cw : cw;
+                              textfieldwith = textfieldwith == av ? av : av;
+                            });
+                          }
                         },
                         backgroundColor: Colors.black,
                         child: Icon(

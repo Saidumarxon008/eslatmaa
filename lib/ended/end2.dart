@@ -3,6 +3,7 @@ import 'package:flutter_mashgulot/ended/end3.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import '../MyApp.dart';
+import '../main.dart';
 
 class EndIkki extends StatefulWidget {
   final int? index;

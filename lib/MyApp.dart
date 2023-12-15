@@ -1,5 +1,6 @@
 // ignore_for_file: depend_on_referenced_packages, file_names
 import 'dart:math';
+import 'package:flutter_mashgulot/main.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:flutter/material.dart';
@@ -12,8 +13,6 @@ import 'package:swipeable_tile/swipeable_tile.dart';
 import 'package:flutter_mashgulot/contap.dart';
 import 'package:animated_icon_button/animated_icon_button.dart';
 import 'ended/end2.dart';
-
-late Box<ToDo> textBox;
 
 class MyApp extends StatefulWidget {
   final int? index;

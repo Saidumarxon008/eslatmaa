@@ -4,6 +4,8 @@ import 'package:flutter_mashgulot/add.dart';
 import 'package:flutter_mashgulot/ended/end2.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
+import 'main.dart';
+
 class Contap extends StatefulWidget {
   final int? index;
 

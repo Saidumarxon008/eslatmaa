@@ -4,8 +4,8 @@ import 'package:flutter_mashgulot/MyApp.dart';
 import 'package:flutter_mashgulot/adapter/todo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-
-void main() async {
+late Box<ToDo> textBox;
+Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.deepOrangeAccent,
@@ -20,7 +20,9 @@ void main() async {
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final int? index;
+
+  const HomePage({super.key, this.index});
 
   @override
   State<HomePage> createState() => HomePageState();
